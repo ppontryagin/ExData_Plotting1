@@ -1,0 +1,11 @@
+## How to run
+
+Contains:
+	plot1(), plot2(), plot3() or plot4() functions
+	plot1.png, plot2.png, plot3.png, plot4.png, 
+
+1. To make a graph one has to call plot1(), plot2(), plot3() or plot4() function
+2. Function takes two parameters: function(file, pngFile): 
+ - 	file - input file household_power_consumption.txt
+ -	pngFile - output png file
+3. Internally plot function calls function readAndFilterFile, which reads and selects the necessary information.
