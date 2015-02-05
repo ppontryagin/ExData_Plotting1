@@ -8,7 +8,7 @@ plot2 <- function(file, pngFile) {
    # gapX <- strptime(gapX, format="%d/%m/20%y %H:%M:%S")
     gapY <- collect(select(data, Global_active_power))[[1]]
     
-    png(file=pngFile)
+    png(file=pngFile, height=480, width=480, bg = "transparent")
     plot(gapX, gapY, xlab = "", ylab="Global active power (kilowatts)", type="l", lty=1, lwd=2 )
     dev.off()
 }

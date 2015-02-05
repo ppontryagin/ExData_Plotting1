@@ -6,7 +6,7 @@ plot1 <- function(file, pngFile) {
     # Prepare data for hist  
     gap <- collect(select(data, Global_active_power))[[1]]
     
-    png(file=pngFile)
+    png(file=pngFile, height=480, width=480, bg = "transparent")
     hist(gap, main="Global active power",xlab="Global active power (kilowatts)", , col="red")
     dev.off()
 }
