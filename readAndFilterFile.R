@@ -7,6 +7,9 @@ readAndFilterFile <- function(file) {
     
     outcome <- filter(outcome, Date == "1/2/2007" | Date == "2/2/2007")
     outcome <- mutate(outcome, Global_active_power = as.double(Global_active_power))
+    outcome <- mutate(outcome, Global_reactive_power = as.double(Global_reactive_power))
+    outcome <- mutate(outcome, Voltage = as.double(Voltage))
+    
     
     outcome <- mutate(outcome, Date_time = paste(Date, Time, sep=" "))
     

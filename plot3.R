@@ -1,7 +1,6 @@
-plot3 <- function(file, pngFile) {
-    #function builds graph: global active power (in kilowatt) by day
-    require(readAndFilterFile)
-    
+plot3 <- function(file, pngFile = 0) {
+    #function builds graph: global active power (in kilowatt) by day by meter
+    require(readAndFilterFile)    
     
     data <- readAndFilterFile(file)
     
@@ -17,8 +16,10 @@ plot3 <- function(file, pngFile) {
     col2 <- "red"
     col3 <- "blue"
     
-    png(file=pngFile, height=480, width=480, bg = "transparent")
-    
+    if(pngFile != 0) {
+        png(file=pngFile, height=480, width=480, bg = "transparent")
+    }
+        
     #1st meter
     plot(gapX, gapY1, xlab = "", ylab="Energy sub metering", type="l", lty=1, lwd=2, col=col1)
     #2nd meter
@@ -27,5 +28,8 @@ plot3 <- function(file, pngFile) {
     lines(gapX, gapY3, col=col3)
    
     legend('topright', c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),  lty=1, lwd=2, col=c(col1, col2, col3), bty='y', cex=.75)
-    dev.off()
+    
+    if(pngFile != 0) {
+        dev.off()
+    }
 }
